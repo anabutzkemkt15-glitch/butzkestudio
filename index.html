@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<title>Butzke Studio | Foto e Vídeo em Ji-Paraná, RO</title>
+<meta name="description" content="Butzke Studio · Fotografia e vídeo para casamentos, eventos e empresas em Ji-Paraná e região. Peça seu orçamento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --grafite:#1A1A1D; --creme:#F3EEE4; --terracota:#D98A4E;
+  --branco:#fff; --grafite-claro:#8A8A8F; --raio:12px; --max:1200px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--grafite);background:var(--creme);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Archivo',sans-serif;font-weight:900;line-height:1.1;letter-spacing:-.02em}
+.acc{color:var(--terracota)}
+section{padding:110px 0}
+.eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--terracota);font-weight:600;margin-bottom:18px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,26,29,.82);backdrop-filter:blur(12px);transition:.3s}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
+.logo{display:flex;align-items:center;text-decoration:none}
+.logo img{height:38px;width:auto;display:block}
+.links{display:flex;gap:30px;align-items:center}
+.links a{color:#cfcdc7;text-decoration:none;font-size:14.5px;transition:.2s}
+.links a:hover{color:#fff}
+.btn{display:inline-block;background:var(--terracota);color:var(--grafite);padding:13px 26px;border-radius:var(--raio);font-weight:600;font-size:14.5px;text-decoration:none;transition:.2s;border:none;cursor:pointer}
+.btn:hover{filter:brightness(.93)}
+.btn-ghost{background:transparent;color:var(--creme);border:1px solid rgba(243,238,228,.35)}
+.burger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 0 90px;background:var(--grafite);overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-image:url(img/hero.jpg);background-size:cover;background-position:center 18%;opacity:.55}
+.hero-bg:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,26,29,.55),rgba(26,26,29,.9))}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{color:var(--creme);font-size:clamp(46px,8vw,86px);margin-bottom:26px;max-width:14ch}
+.hero p{color:#c9c7c1;font-size:clamp(16px,2vw,19px);max-width:52ch;margin-bottom:38px}
+.hero-cta{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+
+.sobre{background:var(--creme)}
+.sobre-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}
+.sobre img{width:100%;border-radius:var(--raio);display:block}
+.sobre h2{font-size:clamp(34px,5vw,52px);margin-bottom:26px}
+.sobre p{margin-bottom:18px;color:#3a3a3d;font-size:16.5px}
+
+/* SERVICOS */
+.servicos{background:var(--grafite);color:var(--creme)}
+.servicos h2{font-size:clamp(34px,5vw,52px);margin-bottom:16px;color:var(--creme)}
+.servicos .sub{color:var(--grafite-claro);margin-bottom:56px;font-size:16.5px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:rgba(243,238,228,.05);border:1px solid rgba(243,238,228,.11);border-radius:var(--raio);padding:38px 32px;transition:.25s}
+.card:hover{border-color:rgba(217,138,78,.5);transform:translateY(-4px)}
+.card h3{color:var(--terracota);font-size:22px;margin-bottom:14px;font-weight:700}
+.card p{color:#bdbbb5;font-size:15.5px;margin-bottom:22px}
+.card a{color:var(--creme);font-size:14.5px;text-decoration:none;font-weight:500;border-bottom:1px solid var(--terracota);padding-bottom:3px}
+
+/* PORTFOLIO */
+.portfolio{background:var(--creme)}
+.portfolio h2{font-size:clamp(34px,5vw,52px);margin-bottom:14px}
+.portfolio .sub{color:#6a6a6d;margin-bottom:34px;font-size:16.5px}
+.filtros{display:flex;gap:10px;margin-bottom:36px;flex-wrap:wrap}
+.filtro{background:transparent;border:1px solid rgba(26,26,29,.18);color:var(--grafite);padding:9px 20px;border-radius:99px;font-size:14px;cursor:pointer;font-family:'Inter';transition:.2s}
+.filtro:hover{border-color:var(--grafite)}
+.filtro.ativo{background:var(--grafite);color:var(--creme);border-color:var(--grafite)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.item{position:relative;border-radius:var(--raio);overflow:hidden;cursor:pointer;aspect-ratio:2/3;background:#ddd}
+.item img{width:100%;height:100%;object-fit:cover;display:block;transition:.5s}
+.item:hover img{transform:scale(1.05)}
+.item .ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(26,26,29,.85));opacity:0;transition:.3s;display:flex;align-items:flex-end;padding:22px}
+.item:hover .ov{opacity:1}
+.item .ov span{color:var(--creme);font-size:14.5px;font-weight:500}
+.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;background:rgba(217,138,78,.93);display:flex;align-items:center;justify-content:center;pointer-events:none}
+.play:after{content:'';border-left:19px solid var(--grafite);border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+.tag{position:absolute;top:14px;left:14px;background:rgba(26,26,29,.75);color:var(--creme);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:99px;font-weight:600}
+
+/* PROCESSO */
+.processo{background:var(--grafite);color:var(--creme)}
+.processo h2{font-size:clamp(34px,5vw,52px);margin-bottom:56px;color:var(--creme)}
+.passos{display:grid;grid-template-columns:repeat(5,1fr);gap:26px}
+.passo .n{font-family:'Archivo';font-weight:900;font-size:46px;color:var(--terracota);line-height:1;margin-bottom:14px}
+.passo h3{font-size:18px;margin-bottom:9px;color:var(--creme);font-weight:700}
+.passo p{color:#a5a39e;font-size:14.5px;line-height:1.55}
+.fecho{margin-top:56px;padding-top:34px;border-top:1px solid rgba(243,238,228,.14);color:var(--grafite-claro);font-size:16.5px}
+
+/* CTA */
+.cta{background:var(--creme);text-align:center}
+.cta h2{font-size:clamp(36px,6vw,62px);margin-bottom:22px}
+.cta p{color:#5a5a5d;font-size:17px;max-width:46ch;margin:0 auto 38px}
+.cta small{display:block;margin-top:26px;color:#8a8a8f;font-size:13.5px}
+
+/* FOOTER */
+footer{background:#141416;color:var(--grafite-claro);padding:56px 0 40px;font-size:14.5px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+footer a{color:#bdbbb5;text-decoration:none;margin-left:22px}
+footer a:hover{color:var(--terracota)}
+.flogo{height:46px;width:auto;display:block;margin-bottom:4px}
+
+/* WHATSAPP FLUTUANTE */
+.zap{position:fixed;right:22px;bottom:22px;z-index:90;width:60px;height:60px;border-radius:50%;background:var(--terracota);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(0,0,0,.28);text-decoration:none;transition:.25s}
+.zap:hover{transform:scale(1.07)}
+.zap svg{width:31px;height:31px;fill:var(--grafite)}
+
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;background:rgba(26,26,29,.96);z-index:200;display:none;align-items:center;justify-content:center;padding:36px}
+.lb.on{display:flex}
+.lb img{max-width:92%;max-height:88vh;border-radius:8px}
+.lb .fechar{position:absolute;top:26px;right:32px;color:var(--creme);font-size:38px;cursor:pointer;line-height:1;background:none;border:0}
+
+@media(max-width:900px){
+  section{padding:76px 0}
+  .links{display:none}
+  .burger{display:block}
+  .sobre-grid{grid-template-columns:1fr;gap:36px}
+  .cards{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,1fr);gap:11px}
+  .passos{grid-template-columns:1fr;gap:30px}
+  .hero{min-height:auto;padding:150px 0 90px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo"><img src="img/logo.png" alt="Butzke Studio"></a>
+    <div class="links">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#processo">Como funciona</a>
+      <a class="btn" href="https://w.app/butzkestudio" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    </div>
+    <button class="burger" onclick="document.querySelector('.links').style.display=document.querySelector('.links').style.display==='flex'?'none':'flex'">☰</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="eyebrow">Foto e vídeo · Ji-Paraná e região</div>
+    <h1>Sua história merece ser <span class="acc">bem contada</span>.</h1>
+    <p>Casamentos, eventos e a imagem da sua empresa, registrados por quem se importa com cada detalhe e entende o que aquela imagem precisa comunicar.</p>
+    <div class="hero-cta">
+      <a class="btn" href="https://w.app/butzkestudio" target="_blank" rel="noopener">Pedir orçamento</a>
+      <a class="btn btn-ghost" href="#portfolio">Ver trabalhos</a>
+    </div>
+  </div>
+</header>
+
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <img src="img/sobre.jpg" alt="Ana Butzke, fotógrafa em Ji-Paraná, RO">
+    <div>
+      <div class="eyebrow">Sobre mim</div>
+      <h2>Fotografia com <span class="acc">olhar</span> e com propósito.</h2>
+      <p>Sou a Ana Butzke, fotógrafa e videomaker em Ji-Paraná. O que me move não é a câmera, é o que acontece na frente dela: o olhar que alguém troca sem perceber, a risada que escapa, o detalhe que a pressa do dia teria levado embora.</p>
+      <p>Antes da fotografia, eu passei anos trabalhando com estratégia e comunicação. Isso mudou completamente o jeito que eu trabalho hoje: antes de levantar a câmera, eu penso no que aquela imagem precisa provocar em quem vai vê-la. É por isso que meu trabalho serve tanto para um casal que quer reviver o próprio casamento quanto para uma empresa que precisa ser levada a sério no digital.</p>
+      <p>Trabalho em Ji-Paraná e em toda a região, e gosto de conhecer bem cada cliente antes do dia. Quando a gente se entende, aparece nas imagens.</p>
+    </div>
+  </div>
+</section>
+
+<section class="servicos" id="servicos">
+  <div class="wrap">
+    <div class="eyebrow">Serviços</div>
+    <h2>Serviços</h2>
+    <p class="sub">Cada projeto começa com uma conversa, porque não existe pacote que sirva para todo mundo.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Casamentos</h3>
+        <p>Cobertura completa do seu dia, do making of à festa. Trabalho de forma discreta, sem interromper o que está acontecendo, e entrego fotos tratadas e um filme que faz você viver tudo de novo.</p>
+        <a href="https://w.app/butzkestudio" target="_blank" rel="noopener">Pedir orçamento →</a>
+      </div>
+      <div class="card">
+        <h3>Eventos e empresas</h3>
+        <p>Congressos, confraternizações, inaugurações e vídeos institucionais. Registro que serve para a empresa comunicar depois: material pronto para redes, site, apresentações e imprensa.</p>
+        <a href="https://w.app/butzkestudio" target="_blank" rel="noopener">Pedir orçamento →</a>
+      </div>
+      <div class="card">
+        <h3>Conteúdo mensal</h3>
+        <p>Para empresas que precisam aparecer sempre e não têm tempo para isso. Eu planejo, capto e entrego um pacote de fotos e vídeos por mês, com um roteiro do que publicar e quando.</p>
+        <a href="https://w.app/butzkestudio" target="_blank" rel="noopener">Saber mais →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="eyebrow">Portfólio</div>
+    <h2>Trabalhos recentes</h2>
+    <p class="sub">Um recorte do que eu venho registrando. Use os filtros para ver por tipo de projeto.</p>
+    <div class="filtros">
+      <button class="filtro ativo" data-f="todos">Todos</button>
+      <button class="filtro" data-f="casais">Casais</button>
+      <button class="filtro" data-f="familias">Famílias</button>
+      <button class="filtro" data-f="empresas">Empresas</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="processo" id="processo">
+  <div class="wrap">
+    <div class="eyebrow">Como funciona</div>
+    <h2>Como a gente trabalha junto</h2>
+    <div class="passos">
+      <div class="passo"><div class="n">01</div><h3>Conversa</h3><p>Sem compromisso. Quero entender a data, o formato e o que é mais importante para você registrar.</p></div>
+      <div class="passo"><div class="n">02</div><h3>Proposta</h3><p>Envio o escopo, os prazos e o valor por escrito. Tudo transparente, sem taxa escondida depois.</p></div>
+      <div class="passo"><div class="n">03</div><h3>Data reservada</h3><p>Contrato assinado e sinal pago. A partir daí a data fica bloqueada na minha agenda.</p></div>
+      <div class="passo"><div class="n">04</div><h3>O grande dia</h3><p>Chego antes do horário, já com tudo planejado. Você aproveita e eu cuido do resto.</p></div>
+      <div class="passo"><div class="n">05</div><h3>Entrega</h3><p>Galeria online com as fotos tratadas e o filme editado, dentro do prazo combinado em contrato.</p></div>
+    </div>
+    <p class="fecho">Um processo simples e transparente, para você saber exatamente o que esperar em cada etapa.</p>
+  </div>
+</section>
+
+<section class="cta" id="contato">
+  <div class="wrap">
+    <h2>Vamos conversar sobre o seu <span class="acc">projeto</span>?</h2>
+    <p>Me conte a data e o que você tem em mente. Respondo rápido, sem compromisso, e já te digo se a agenda está livre.</p>
+    <a class="btn" href="https://w.app/butzkestudio" target="_blank" rel="noopener" style="padding:17px 40px;font-size:16px">Chamar no WhatsApp</a>
+    <small>Ji-Paraná e região · Consulte disponibilidade para outras cidades</small>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img class="flogo" src="img/logo.png" alt="Butzke Studio">
+      <div style="margin-top:9px;font-size:13.5px">Foto e Vídeo · Ji-Paraná, RO</div>
+    </div>
+    <div>
+      <a href="https://instagram.com/butzkestudio" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://w.app/butzkestudio" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="#">E-mail</a>
+    </div>
+  </div>
+</footer>
+
+<a class="zap" href="https://w.app/butzkestudio" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5v-.5c-.1-.1-.7-1.5-.9-2.1-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2"/></svg>
+</a>
+
+<div class="lb" id="lb"><button class="fechar" onclick="fechar()">×</button><img id="lbimg" src="" alt=""></div>
+
+<script>
+const itens = [{"img": "img/portfolio-01.jpg", "cat": "casais", "tipo": "foto", "titulo": "Ensaio de casal"}, {"img": "img/portfolio-02.jpg", "cat": "casais", "tipo": "foto", "titulo": "Ensaio de casal"}, {"img": "img/portfolio-03.jpg", "cat": "familias", "tipo": "foto", "titulo": "Ensaio em família"}, {"img": "img/portfolio-04.jpg", "cat": "familias", "tipo": "foto", "titulo": "Ensaio em família"}, {"img": "img/portfolio-05.jpg", "cat": "empresas", "tipo": "foto", "titulo": "Retrato corporativo"}, {"img": "img/portfolio-06.jpg", "cat": "empresas", "tipo": "foto", "titulo": "Retrato corporativo"}];
+const grid = document.getElementById('grid');
+function render(f='todos'){
+  grid.innerHTML = itens.filter(i=>f==='todos'||i.cat===f).map(i=>`
+    <div class="item" onclick="abrir('${i.img}')">
+      <img src="${i.img}" alt="${i.titulo}" loading="lazy">
+      <span class="tag">${i.cat}</span>
+      ${i.tipo==='video'?'<div class="play"></div>':''}
+      <div class="ov"><span>${i.titulo}</span></div>
+    </div>`).join('');
+}
+render();
+document.querySelectorAll('.filtro').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.filtro').forEach(x=>x.classList.remove('ativo'));
+  b.classList.add('ativo'); render(b.dataset.f);
+});
+function abrir(src){document.getElementById('lbimg').src=src;document.getElementById('lb').classList.add('on');}
+function fechar(){document.getElementById('lb').classList.remove('on');}
+document.getElementById('lb').onclick=e=>{if(e.target.id==='lb')fechar()};
+document.onkeydown=e=>{if(e.key==='Escape')fechar()};
+</script>
+</body>
+</html>
